@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Coding challenge</title>
+  <meta name="description" content="A simple HTML5 page with a sign-up form.">
+  <meta name="author" content="Janus Hasseriis">
+
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"> 
+
+</head>
+
+<body>
+    <input id="sign-up" type="button" value="sign up" class="btn"></input>
+    <div id="modal" class="modal hidde">
+      <div id="pop-up" class="pop-up">
+        <span id="close" class="close">&times;</span>
+        <div class="pop-up__header">Sign up form</div>
+        <form id="signup-form" action="/signup" method="POST">
+          <div class="pop-up__input-fields">
+            <label for="firstname">First name</label>
+            <input name="firstname" type="text" placeholder="Enter your first name" class="input" required >
+            <label for="firstname">Last name</label>
+            <input name="lastname" type="text" placeholder="Enter your last name" class="input" required >
+            <label for="gender">Gender<span> - optional</span></label>
+            <select id="gender" name="gender" class="input">
+              <option value="----">Select ...</option>
+              <option value="man">Man</option>
+              <option value="woman">Woman</option>
+              <option value="Undisclosed">Prefer not to say</option>
+            </select>
+            <label for="firstname">Phone number<span> - optional</span></label>
+            <input name="phone" type="tel" placeholder="xx xx xx xx" pattern="[0-9]{8}" class="input" >
+            <div class="input__help">Enter a danish phone number</div>
+            <label for="firstname">E-mail</label>
+            <input name="email" type="text" placeholder="e.g. name@email.com" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" class="input" required >
+            <input type="checkbox" id="subscribe" name="subscribe" value="subscribe">
+            <label for="subscribe">Subscribe to offers</label>
+          </div>
+          <div class="pop-up__buttons" >
+            <input id="cancel" type="reset" value="cancel" class="btn btn--cancel" /><input type="submit" value="submit" class="btn btn--submit" />
+          </div>
+        </form>
+        <div id="receipt" class="receipt">
+        </div>
+      </div>
+    </div>
+  <script src="js/scripts.js"></script>
+</body>
+</html>
